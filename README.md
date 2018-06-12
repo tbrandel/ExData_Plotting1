@@ -112,3 +112,11 @@ The four plots that you will need to construct are shown below.
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
+Instructions
+Each plot is produced by running plotX.R. By default any one of the plots will pull down the data set and load the data for Feb 1 and 2 in 2007. The details of fetching and processing the data are handled getData.R. Normal usage is
+
+source("getData.R")     # load the function definitions
+data <- courseData()    # load the wrapper object for the data
+pwr <- data$get()       # fetch and pre-process the data set
+makePlotX(pwr, "path/to/output.png")   # call function to build the plot
+                                       # using the data set.
